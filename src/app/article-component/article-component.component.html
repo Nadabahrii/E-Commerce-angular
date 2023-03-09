@@ -1,0 +1,32 @@
+<p>Les Articles du jour</p>
+<input type="text" name="reff" [(ngModel)]="x" (ngModelChange)="articles()">
+
+<div class="row">
+  <div class="col-md-4" *ngFor="let article of listeArticles">
+    <div *ngIf="article.categorie!=cat2">
+      <div *ngIf="article.categorie!=cat " >
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{article.titre}}</h5>
+            <p   class="card-text">Auteur:{{article.auteur}}</p>
+            <p class="card-text">Date:{{article.date}}</p>
+            <p  class="card-text">Contenu:{{article.contenu}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="article.categorie==cat2">
+      <div *ngIf="article.categorie!=cat " >
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 style="color: blue;" class="card-title">{{article.titre}}</h5>
+            <p  style="color: blue;" class="card-text">Auteur:{{article.auteur}}</p>
+            <p  style="color: blue;" class="card-text">Date:{{article.date}}</p>
+            <p  style="color: blue;" class="card-text">Contenu:{{article.contenu}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>

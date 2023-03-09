@@ -1,0 +1,19 @@
+input{
+  width: 20%;
+
+}
+form{
+  margin-left: 70px;
+  margin-top: 20px;
+}
+.fieldset{
+  line-height: 20px;
+  color: #111111;
+
+
+}
+
+legend{
+
+  padding: 5px 10px;
+}

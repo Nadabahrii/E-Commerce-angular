@@ -1,0 +1,51 @@
+<form #f="ngForm">
+
+  <div class="form-group">
+    <label>Id</label>
+    <input type="number" class="form-control" name="id" [(ngModel)]="product.id" placeholder="Enter id"  required #id="ngModel">
+        <div *ngIf="id.invalid && id.touched">
+          <div class="alert alert-danger">id required !</div>
+
+        </div>
+  </div>
+
+  <div class="form-group">
+    <label>Title</label>
+    <input type="string" class="form-control" name="title" [(ngModel)]="product.title" placeholder="Enter Title" pattern="[A-Za-z]{3,}" required minlength="3"  #title="ngModel">
+    <div  class="alert alert-danger" *ngIf="title.invalid && title.touched">
+
+      <div *ngIf="title.errors?.['minlength']"> Title min Lenght = 3 !</div>
+      <div *ngIf="title.errors?.['required']">Title required !</div>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label>Price</label>
+    <input type="number" class="form-control" name="price"  [(ngModel)]="product.price"  placeholder="Enter Price" required #price="ngModel" min="0">
+    <div class="alert alert-danger" *ngIf="price.invalid && price.touched">
+      <div >price required !</div>
+      <div >price must be positive ! </div>
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Quantity</label>
+    <input type="number" class="form-control" name="quantity"  [(ngModel)]="product.quantity" placeholder="Enter Quantity" required min="99" max="999" #quantity="ngModel">
+
+    <div  class="alert alert-danger" *ngIf="quantity.invalid && quantity.touched">
+      <div >Quantity required !</div>
+      <div >Quantity must be positive !</div>
+    </div>
+
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" (click)="ajouter(product)" [disabled]="f.invalid">Submit</button>
+</form>
+
+{{product.id}}
+{{product.quantity}}
+{{product.price}}
+{{product.title}}

@@ -1,0 +1,25 @@
+.style1{
+  color: blueviolet;
+  background-color: chartreuse;
+  border:1px solid #111;
+  border-radius: 16px;
+  margin-left: 20px;
+  margin-top: 50px;
+  box-shadow: firebrick;
+  display: flex;
+
+}
+
+.style2{
+  color: gold;
+  background-color: fuchsia;
+}
+
+.style1:hover{
+  background-color: aqua;
+  cursor: pointer;
+
+
+}
+
+

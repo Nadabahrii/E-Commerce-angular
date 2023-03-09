@@ -1,0 +1,15 @@
+<p xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">offres-emploi-component works!</p>
+<li> chercher un emploi <input type="search" [(ngModel)]="chercherParEntreprise"> </li>
+<div class="col-md-3" *ngFor="let le of listeEmploi let i=index">
+  <li *ngIf="chercherParEntreprise==le.entreprise">
+  <div class="card-body">
+  <h5 class="card-title">Offre d'emploi  {{le.reference}}</h5>
+  <p class="text-bg-danger"> reference: {{le.reference}} ************** title : {{le.title}} ** entreprise : {{le.entreprise}} ** etat : {{le.etat}}  ***** index {{i}}  </p>
+  <button class="btn btn-primary" [disabled]="le.etat==false"> Postuler</button>
+    <button class="btn btn-secondary" > Bilan</button>
+  </div>
+  </li>
+
+
+
+</div>

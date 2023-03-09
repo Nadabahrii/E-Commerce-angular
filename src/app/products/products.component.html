@@ -1,0 +1,27 @@
+<p xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">products works!</p>
+
+
+
+<ul>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let prod of product let i=index">
+      <div *ngIf="price<prod.price">
+        <app-product-item [p]="prod" (incrementEvent)="like($event)"  (decrementEvent)="buy($event)"  > </app-product-item>
+
+      </div>
+  </div>
+ </div>
+
+
+
+
+</ul>
+
+<input type="string" class="form-control" name="criteria" [(ngModel)]="criteria" placeholder="Enter criteria"  >
+<input type="number" class="form-control" name="nombre" [(ngModel)]="value" placeholder="Enter value"  >
+<button type="submit" class="btn btn-primary" (click)="getNumber()" >Get Number</button>
+{{getNumber()}}
+
+{{criteria}}
+{{value}}
+
